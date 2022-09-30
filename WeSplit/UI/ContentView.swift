@@ -14,8 +14,6 @@ struct ContentView: View {
   @State private var numberOfPeople = 2
   @State private var tipPercentage = 20
   
-  let tipPercentages = [10, 15, 20, 25, 0]
-  
   var totalBill: Double {
     let tipSelection = Double(tipPercentage)
     let tipValue = checkAmount / 100 * tipSelection
@@ -30,9 +28,7 @@ struct ContentView: View {
     return amountPerPerson
   }
   
-  var localCurrency: FloatingPointFormatStyle<Double>.Currency {
-    .currency(code: Locale.current.identifier)
-  }
+  private let localCurrency: FloatingPointFormatStyle<Double>.Currency = .currency(code: Locale.current.identifier)
   
   var body: some View {
     NavigationStack {
@@ -41,7 +37,6 @@ struct ContentView: View {
         .toolbar {
           ToolbarItemGroup(placement: .keyboard) {
             Spacer()
-            
             Button("Done") {
               amountIsFocused = false
             }
@@ -60,16 +55,18 @@ struct ContentView: View {
         )
         .keyboardType(.decimalPad)
         .focused($amountIsFocused)
-      }
-      
-      NavigationLink {
-        PeoplePickerScreen(numberOfPeople: $numberOfPeople)
-      } label: {
-        HStack {
-          Text("Number of people")
-          Spacer()
-          Text((numberOfPeople + 2).description)
+        
+        NavigationLink {
+          PeoplePickerScreen(numberOfPeople: $numberOfPeople)
+        } label: {
+          HStack {
+            Text("Number of people")
+            Spacer()
+            Text((numberOfPeople + 2).description)
+          }
         }
+      } header: {
+        HeaderText(text: "The bill amount and party size")
       }
       
       Section {
@@ -88,24 +85,30 @@ struct ContentView: View {
           }
         }
       } header: {
-        Text("How much tip do you want to leave?")
-          .textCase(.none)
+        HeaderText(text: "How much tip do you want to leave?")
       }
       
       Section {
         Text(totalPerPerson, format: localCurrency)
       } header: {
-        Text("Amount per person")
-          .textCase(.none)
+        HeaderText(text: "Amount per person")
       }
       
       Section {
         Text(totalBill, format: localCurrency)
       } header: {
-        Text("Total amount for the check")
-          .textCase(.none)
+        HeaderText(text: "Total amount for the check")
       }
     }
+  }
+}
+
+struct HeaderText: View {
+  let text: String
+  
+  var body: some View {
+    Text(text)
+      .textCase(.none)
   }
 }
 
