@@ -11,6 +11,8 @@
 		2F94674E28E66E7F0044AD08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94674D28E66E7F0044AD08 /* ContentView.swift */; };
 		2F94675028E66E7F0044AD08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F94674F28E66E7F0044AD08 /* Assets.xcassets */; };
 		2F94675328E66E7F0044AD08 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F94675228E66E7F0044AD08 /* Preview Assets.xcassets */; };
+		2F94675D28E67C110044AD08 /* TipPercentagePickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94675C28E67C110044AD08 /* TipPercentagePickerScreen.swift */; };
+		2F94675F28E67C8D0044AD08 /* PeoplePickerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94675E28E67C8D0044AD08 /* PeoplePickerScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		2F94674D28E66E7F0044AD08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2F94674F28E66E7F0044AD08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F94675228E66E7F0044AD08 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2F94675C28E67C110044AD08 /* TipPercentagePickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPercentagePickerScreen.swift; sourceTree = "<group>"; };
+		2F94675E28E67C8D0044AD08 /* PeoplePickerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeoplePickerScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +55,8 @@
 		2F94674A28E66E7F0044AD08 /* WeSplit */ = {
 			isa = PBXGroup;
 			children = (
-				2F94674B28E66E7F0044AD08 /* WeSplitApp.swift */,
-				2F94674D28E66E7F0044AD08 /* ContentView.swift */,
-				2F94674F28E66E7F0044AD08 /* Assets.xcassets */,
+				2F94675928E67BE20044AD08 /* App */,
+				2F94675A28E67BED0044AD08 /* UI */,
 				2F94675128E66E7F0044AD08 /* Preview Content */,
 			);
 			path = WeSplit;
@@ -65,6 +68,25 @@
 				2F94675228E66E7F0044AD08 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2F94675928E67BE20044AD08 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2F94674B28E66E7F0044AD08 /* WeSplitApp.swift */,
+				2F94674F28E66E7F0044AD08 /* Assets.xcassets */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2F94675A28E67BED0044AD08 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2F94674D28E66E7F0044AD08 /* ContentView.swift */,
+				2F94675E28E67C8D0044AD08 /* PeoplePickerScreen.swift */,
+				2F94675C28E67C110044AD08 /* TipPercentagePickerScreen.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +160,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F94674E28E66E7F0044AD08 /* ContentView.swift in Sources */,
+				2F94675D28E67C110044AD08 /* TipPercentagePickerScreen.swift in Sources */,
+				2F94675F28E67C8D0044AD08 /* PeoplePickerScreen.swift in Sources */,
 				2F94674C28E66E7F0044AD08 /* WeSplitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
